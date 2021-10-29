@@ -10,11 +10,11 @@ import os, sys, ctypes, time
 current_user = os.environ["USERNAME"]
 
 # INITIATION OF VARIABLES TO CALL FUNCTIONS IN CLASSES
-gt = takeown.GetOwn()
+gt = overwrite.GetOwn()
 gr = icacls.GetPermission()
 dr = delproc.Remove()
 dk = delproc.Kill()
-rkey = regedit.ManageKey()
+rkey = regwrite.ManageKey()
 
 # MAIN CODE
 if(get_admin_rights.is_admin()):
